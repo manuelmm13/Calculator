@@ -8,3 +8,13 @@ function showDigit(){
 
     return screen
 }
+
+
+var output = document.querySelector(".btn")
+const input = document.getElementsByTagName("button").value
+
+function showDigit(){
+    return input === output
+}
+console.log(showDigit)
+
