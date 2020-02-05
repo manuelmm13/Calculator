@@ -12,10 +12,10 @@ function clickSum () {
 }
 
 function handleClicks(){
-     for (let i = 0; i < 10; i++) {
-        let target = document.getElementById(i) 
-         target.addEventListener("click", function(){Action(i)})
-        }
+    for (let i = 0; i < 10; i++) {
+        let target = document.getElementsByClassName("btn")[i]
+        target.addEventListener("click", function(){Action(i)})
+    }
     let sumbutton = document.getElementsByClassName("btn")[10]
     sumbutton.addEventListener("click", function(){clickSum()})
 

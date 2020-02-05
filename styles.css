@@ -12,7 +12,7 @@ h1 {
     
 }
 
-.calculator {
+#calculator {
     border: 1px solid #ccc;
     border-radius: 5px;
     position: absolute;
@@ -33,7 +33,6 @@ h1 {
  
   }
 
-
 .calculator-buttons {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -43,6 +42,11 @@ h1 {
     grid-column-gap: 10px;
     background-color: #ffffff;
     padding: 10px;
+}
+
+input,
+button {
+    font-size: 3em;
 }
 
 button.btn-equal {
