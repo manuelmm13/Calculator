@@ -2,20 +2,19 @@ let Memory = null;
 let Memory2 = null;
 let sumClicked = false;
 
-function AccessValueButton (i) {
-    let buttons = document.getElementsByTagName("button")
-    return buttons[i].value
-}
 
 function clickSum () {
     sumClicked = true;
 }
 
 function handleClicks(){
-    for (let i = 0; i < 10; i++) {
-        let target = document.getElementsByClassName("btn")[i]
-        target.addEventListener("click", function(){Action(i)})
-    }
+    const buttonsPanel = document.querySelector("#calculator-buttons");
+    buttonsPanel.addEventListener("click", function(event){
+        const btn = event.target;
+        if (isNaN(btn.value)) { return false; }
+        Action(btn.value);
+    });
+
     let sumbutton = document.getElementsByClassName("btn")[10]
     sumbutton.addEventListener("click", function(){clickSum()})
 
@@ -36,20 +35,21 @@ function printToScreen (number) {
 }
 
 
-function Action (i) {
+function Action (value) {
+
     if (sumClicked == false) {
         if (Memory == null) {
-            Memory = AccessValueButton(i).toString()
+            Memory = value
         } else {
-            Memory = Memory + AccessValueButton(i).toString()
+            Memory = Memory + value
             console.log(Memory)
         } 
         printToScreen(Memory)
     } else {
         if (Memory2 == null) {
-            Memory2 = AccessValueButton(i).toString()
+            Memory2 = value
         } else {
-            Memory2 = Memory2 + AccessValueButton(i).toString()
+            Memory2 = Memory2 + value
             console.log(Memory2)
     }
     printToScreen(Memory2)
