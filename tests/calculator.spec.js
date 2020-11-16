@@ -24,4 +24,14 @@ describe('Calculator tests', function() {
         cy.get('#screen').should('have.value', '123')
     })
 
+    it('Clicking the plus button updates the screen', function() {
+        cy.visit('index.html')
+        cy.get('#calculator').contains('button', '1').click()
+        cy.get('#calculator').contains('button', '2').click()
+        cy.get('#calculator').contains('button', '+').click()
+        cy.get('#calculator').contains('button', '3').click()
+        cy.get('#calculator').contains('button', '4').click()
+        cy.get('#screen').should('have.value', '34')
+    })
+
 })
